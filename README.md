@@ -1,33 +1,9 @@
 <a name="top"></a>
 
-# Baseball Analysis
-
-This repo is made to provide baseball data to perform analysis, (statistical) tests/simulations, and (ML) modeling.
-
-[Project Ideas](#project-ideas)    
-    
-[Steps to contribute](#steps-to-contribute)    
 
 
-**Projects:**
-- **[Project 1](#project1): Predicting Team Wins + EDA**
-    
-## Acquire Data
 
-[See Data Dictionary](#date-dictionary)
-
-- Used Selenium to read mlb team and player stats from [Baseball Reference](https://www.baseball-reference.com)
-
-Note on the data: 
-- There are only 30 teams, so although there are lots of features (stats), there can only be so many rows of data, as each row represents the team's stats for the year. The amount of rows is 30 times the number of years.
-- Players' stats, on the other hand, can offer thousands of rows to analyze.
-- 2020 and 2023 data don't offer a full season's worth of stats, so these are left out, but can be accessed with the functions in `acquire.py`
-
----
-
-<a name="project1"></a>
-
-## Project 1: Predicting MLB Team Wins + Analyzing Stats' Relations to Team Wins
+# Project 1: Predicting MLB Team Wins + Analyzing Stats' Relations to Team Wins
 
 **Description:**
 - In this project, **team pitching stats** and **team batting stats** are used to see which stats lead to more wins. After finding the features that predict wins the most, regression models will be made to predict team wins in a season.
@@ -42,6 +18,13 @@ Note on the data:
     - evaluate the best regression model for insights
 - Features: MLB stats that are not calculated off wins or runs
 - Target: team wins (continuous target)
+
+
+### Acquire Data
+
+[See Data Dictionary](#date-dictionary)
+
+- Used Selenium to read mlb team and player stats from [Baseball Reference](https://www.baseball-reference.com)
 
 
 ### Data Analysis (EDA)
@@ -208,44 +191,6 @@ Modeling
 | PwrSpd  | Power-speed number  $\frac{2 x HR x SB}{SB + HR}$               |
 
 
-**Player Batting Stats:**
-
-| Stat         | Definition                                            | Stat         | Definition        |
-|:-------------|:------------------------------------------------------|:-------------|:------------------|
-| year         | Season                                                | id           | Player ID         |
-| Name         | Player Name                                     | Bats         | Bats right/left/switch |
-| Age          | Player Age                                            | Tm           | Team             |
-| Lg           | League                                                | G            | Games played     |
-| PA           | Plate appearances                                     | AB           | At-bats           |
-| R            | Runs scored                                           | H            | Hits             |
-| 2B           | Doubles                                               | 3B           | Triples          |
-| HR           | Home runs                                             | RBI          | Runs batted in    |
-| SB           | Stolen bases                                          | CS           | Caught stealing   |
-| BB           | Walks                                                 | SO           | Strikeouts       |
-| BA           | Batting average                                       | OBP          | On-base percentage  |
-| SLG          | Slugging percentage                                | OPS          | On-base plus slugging |
-| OPS+         | OPS+                                                  | TB           | Total bases       |
-| GDP          | Grounded into double play                              | HBP          | Hit by pitch   |
-| SH           | Sacrifice hits                                        | SF           | Sacrifice flies   |
-| IBB          | Intentional walks                                     | Pos Summary  | Positions played  |
-| Outs         | Total outs made                                       | RC           | Runs created    |
-| RC/G         | Runs created per game | AIR          | Measure of amount played in hitter-friendly setting|
-| BAbip | Batting average on balls in play $\frac{H - HR}{AB - SO - HR + SF}$  | lgBA | Adjusted batting average |
-| lgOBP        | League on-base percentage           | lgSLG        | League slugging percentage |
-| lgOPS        | League on-base plus slugging    | OWn%         | Offensive winning percentage   |
-| BtRuns       | Batting runs above average        | BtWins       | Batting wins above replacement    |
-| TotA         | Total chances in the field                | SecA         | Secondary average          |
-| ISO          | Isolated power                                        | PwrSpd       | Power-speed number |
-| rOBA         | Reference-weighted on-base average                    | Rbat+        | Runs above average  |
-| HR%          | Home run percentage                                 | SO%          | Strikeout percentage |
-| BB%          | Walk percentage                                     | LD%          | Line drive percentage |
-| GB%          | Ground ball percentage                                | FB%          | Fly ball percentage |
-| GB/FB        | Ground ball to fly ball ratio         | Pull%        | Percentage of pulled balls  |
-| Cent% | Percentage of balls hit to center field | Oppo%    | Percentage of balls hit to opposite field  |
-| WPA          | Win probability added                 | cWPA         | Championship win probability added |
-| RE24 | Run expectancy based on 24 base-out states           | RS%          | Percentage of runs scored |
-| SB%          | Stolen base success rate                    | XBT%         | Extra bases taken percentage  |
-| EV           | Exit velocity                               | HardH%       | Percentage of hard-hit balls |
 
 
 **Team Pitching Stats:**
@@ -292,72 +237,4 @@ Modeling
 | Opp    | GIDP opportunities        | DP     | Double plays induced |
 | %      | GIDP Percentage                                         |        |                               |
 
-**Player Pitching Stats:**
-
-| Stat   | Definition                                          | Stat   | Definition            |
-|:-------|:----------------------------------------------------|:-------|:----------------------|
-| year   | Year of the season                                  | id     | Player ID                     |
-| Name   | Player Name                                         | Throws | Throwing hand                |
-| Age    | Player Age                                          | Tm     | Team                        |
-| Lg     | League                                              | W      | Wins                       |
-| L      | Losses                                              | W-L%   | Win-loss percentage          |
-| ERA    | Earned run average                                  | G      | Games played                    |
-| GS     | Games started                                       | GF     | Games finished               |
-| CG     | Complete games                                      | SHO    | Shutouts                    |
-| SV     | Saves                                               | IP     | Innings pitched             |
-| H      | Hits allowed                                        | R      | Runs allowed                 |
-| ER     | Earned runs                                         | HR     | Home runs allowed           |
-| BB     | Walks allowed                                       | IBB    | Intentional walks            |
-| SO     | Strikeouts                                          | HBP    | Hit by pitch                   |
-| BK     | Balks                                               | WP     | Wild pitches                  |
-| BF     | Batters faced                                       | ERA+   | Adjusted ERA                 |
-| FIP    | Fielding Independent Pitching                     | WHIP   | Walks plus hits per inning pitched |
-| H9     | Hits per 9 innings                                  | HR9    | Home runs per 9 innings      |
-| BB9    | Walks per 9 innings                                 | SO9    | Strikeouts per 9 innings       |
-| SO/W   | Strikeout-to-walk ratio                             | BA     | Batting average against         |
-| OBP    | On-base percentage against                         | SLG    | Slugging percentage against    |
-| OPS    | On-base plus slugging against           | BAbip  | Batting average on balls in play against |
-| HR%    | Home run percentage against                        | SO%    | Strikeout percentage against    |
-| BB%    | Walk percentage against                            | LD%    | Line drive percentage against   |
-| GB%    | Ground ball percentage against                     | FB%    | Fly ball percentage against   |
-| GB/FB  | Ground ball to fly ball ratio against               | WPA    | Win probability added         |
-| cWPA   | Championship win probability added      | RE24   | Run expectancy based on 24 base-out states  |
-| EV     | Exit velocity against                            | HardH% | Percentage of hard-hit balls against |
-
-
-[Back to top](#top)
-
-
-<a name="steps-to-contribute"></a>
-**Steps to contribute:**
-- Option 1;
-    1. pull files from remote `master` branch to update your local repo (`git pull origin master`)
-    2. create a new local branch and create/edit files (`git checkout -b [your_new_branch]`)
-    3. `add/commit` files in that branch
-    4. push branch to remote repo for lead to review and merge onto remote `master` branch (`git push origin [your_new_branch]`)
-    5. move back to local `master` branch and repeat steps 1-4 to contribute more (`git checkout master`)
-   
-- Option 2:
-    1. pull files from remote `master` branch to update your local repo (`git pull origin master`)
-    2. create new notebooks and python files with work you want to contribute.
-        -  **don't change main files**
-    3. lead will review files to add to "main files"
-    4. `add/commit/push` as usual
-    5. run step 1 to update local repo, repeat steps 2-4 to contribute more.
-    
-[Back to top](#top)
-
-
-<a name="project-ideas"></a>
-
-Possible project goals:
-
-- [x] Which stats lead to more wins (team wins)? (EDA)
-    - Can we build a regression model to predict team wins in a season?
-- [ ] Which stats correlate most to runs scored (team runs)? (EDA)
-    - Can we build a regression model to predict team runs in a season?
-- [ ] Which stats correlate most to other important stats, including player stats? (EDA)
-    - Can we build a regression model to predict these stats?
-- [ ] Can we find common groups of players and find value and insights from those groups?
-    
 [Back to top](#top)
