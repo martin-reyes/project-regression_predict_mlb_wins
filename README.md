@@ -22,7 +22,7 @@
 
 ### Acquire Data
 
-[See Data Dictionary](#date-dictionary)
+[See Data Dictionary](#data-dictionary)
 
 - Used Selenium to read mlb team and player stats from [Baseball Reference](https://www.baseball-reference.com)
 
