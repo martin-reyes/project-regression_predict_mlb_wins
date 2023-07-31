@@ -21,14 +21,14 @@ Note: project done in [this](https://github.com/prestige-worldwide-1/baseball-pr
 - Target: team wins (continuous target)
 
 
-### Acquire Data
+## Acquire Data
 
 [See Data Dictionary](#data-dictionary)
 
 - Used Selenium to read mlb team and player stats from [Baseball Reference](https://www.baseball-reference.com)
 
 
-### Data Analysis (EDA)
+## Data Analysis (EDA)
 
 Data is split into training and test data. Analysis is performed on training data to avoid bias and data leakage during modeling. 
 
@@ -70,7 +70,7 @@ Insights:
 </div>
 
 
-### Machine Learning Models: Regression
+## Machine Learning Models: Regression
 
 Baseline Model:
 
@@ -115,7 +115,7 @@ The model's unscaled coefficients tell us how many wins are added or subtracted 
 |Pitchers age |    .24        |       1 yr      |
 |Intercept    |   79.4        |                 |
 
-### Conclusions and Insights
+## Conclusions and Insights
 
 ##### Summary
 
