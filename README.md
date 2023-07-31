@@ -1,9 +1,10 @@
 <a name="top"></a>
 
+# Project: Predicting MLB Team Wins + Analyzing Stats that Lead to Wins
 
+by Martin Reyes
 
-
-# Project 1: Predicting MLB Team Wins + Analyzing Stats' Relations to Team Wins
+Note: project done in [this](https://github.com/prestige-worldwide-1/baseball-project#date-dictionary) repo
 
 **Description:**
 - In this project, **team pitching stats** and **team batting stats** are used to see which stats lead to more wins. After finding the features that predict wins the most, regression models will be made to predict team wins in a season.
